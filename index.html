@@ -1,22 +1,48 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="./styles/css/master.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <?-- CSS -->
+    <link rel="stylesheet" href="./styles/css/style.css">
+
   </head>
+
   <body>
-    <div class="box">
-      <h2>Password Generator</h2>
-      <input type="text" name="" placeholder="Create password" id="password" readonly>
-      <table>
-        <th><div id="button" class="btn1" onclick="genPassword()">Generate</div></th>
-        <th><a id="button" class="btn2" onclick="copyPassword()">Copy</a></th>
-      </table>
+    <div class="">
+      <div class="">
+        Password Generator
+      </div>
+      <div class="">
+        <div class="">
+          <input type="range" name="range" id="range" min="8" max="15">
+          <input type="checkbox" id="upper" name="upper"><label for="upper">ABC</label>
+          <input type="checkbox" id="number" name="number"><label for="number">123</label>
+          <input type="checkbox" id="special" name="special"><label for="special">$%^</label>
+        </div>
+        <div class="">
+          <input id="password" type="text" name="" value="" readonly disabled>
+        </div>
+      </div>
+      <div class="">
+        <div class="">
+          <button type="button" name="button" onClick="genPassword()">Generate</button>
+        </div>
+        <div class="">
+          <button type="button" name="button" onclick="copyPassword()">Copy</button>
+        </div>
+      </div>
     </div>
-    <script src="./scripts/password.js" charset="utf-8"></script>
+
+    <?-- JS -->
+    <script src="./scripts/javascript/passgen.js" charset="utf-8"></script>
   </body>
+
 </html>
+
+<!-- TODO:
+Add security bar : red/yellow/green bar that change based on how many options you allow when generating a Password
+Add value under the range slider
+-->
