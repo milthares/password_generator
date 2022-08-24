@@ -1,3 +1,11 @@
+const range = document.querySelector(".range");
+const bubble = document.querySelector(".bubble");
+
+range.addEventListener("input", () => {
+  setBubble(range, bubble);
+});
+setBubble(range, bubble);
+
 var password = "";
 
 var lowers = "abcdefghijklmnopqrstuvwxyz";
@@ -212,14 +220,6 @@ function genPassword() {
   document.getElementById('password').value = temp;
 }
 
-const range = document.querySelector(".range");
-const bubble = document.querySelector(".bubble");
-
-range.addEventListener("input", () => {
-  setBubble(range, bubble);
-});
-setBubble(range, bubble);
-
 function setBubble(range, bubble) {
   const val = range.value;
   const min = range.min ? range.min : 0;
@@ -230,11 +230,7 @@ function setBubble(range, bubble) {
   bubble.style.left = `calc(${newVal}% + (${8 - newVal * 0.15}px))`;
 }
 
-// TODO: manage which characters use in the password
 // TODO: catch if same character is pulled twice in a row
-// TODO: make it so it can use multiple special characters
-
-
 
 /* OLD VERSIONS
 > could put only a single optional character per generation
