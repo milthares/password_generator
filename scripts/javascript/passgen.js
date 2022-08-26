@@ -1,3 +1,7 @@
+// TODO: catch if same character is pulled twice in a row
+// TODO: manage exceptions caused by not choosing any character for the password.
+
+
 const range = document.querySelector(".range");
 const bubble = document.querySelector(".bubble");
 
@@ -7,7 +11,7 @@ range.addEventListener("input", () => {
 setBubble(range, bubble);
 
 var password = "";
-
+var blank = ["Password", "Secure", "Birthday", "Christmas", "Toasty", "Shoryuken"];
 var lowers = "abcdefghijklmnopqrstuvwxyz";
 var uppers = "ABCDEFGHIJKLMNOPQRSTUWVXYZ";
 var numbers = "0123465789";
@@ -216,6 +220,7 @@ function genPassword() {
     }
       break;
     default:
+      temp = blank[Math.floor(Math.random() * blank.length)];
   }
   document.getElementById('password').value = temp;
 }
@@ -229,8 +234,6 @@ function setBubble(range, bubble) {
 
   bubble.style.left = `calc(${newVal}% + (${8 - newVal * 0.15}px))`;
 }
-
-// TODO: catch if same character is pulled twice in a row
 
 /* OLD VERSIONS
 > could put only a single optional character per generation

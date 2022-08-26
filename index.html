@@ -1,50 +1,61 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-
-    <?-- CSS -->
-    <link rel="stylesheet" href="./styles/css/style.css">
-
-  </head>
-
-  <body>
-    <div class="">
-      <div class="">
-        Password Generator
-      </div>
-      <div class="">
-        <div class="">
-          <input type="range" id="range" class="range" value="8" min="8" max="15">
-          <output class="bubble"></output>
-          <input type="checkbox" id="lower" name="lower"><label for="lower">Lowers</label>
-          <input type="checkbox" id="upper" name="upper"><label for="upper">Uppers</label>
-          <input type="checkbox" id="number" name="number"><label for="number">Numbers</label>
-          <input type="checkbox" id="special" name="special"><label for="special">Specials</label>
-        </div>
-        <div class="">
-          <input id="password" type="text" name="" value="" readonly disabled>
-        </div>
-      </div>
-      <div class="">
-        <div class="">
-          <button type="button" name="button" onClick="genPassword()">Generate</button>
-        </div>
-        <div class="">
-          <button type="button" name="button" onclick="copyPassword()">Copy</button>
-        </div>
-      </div>
-    </div>
-
-    <?-- JS -->
-    <script src="./scripts/javascript/passgen.js" charset="utf-8"></script>
-  </body>
-
-</html>
-
 <!-- TODO:
 Add security bar : red/yellow/green bar that change based on how many options you allow when generating a Password
 Add value under the range slider
 -->
+
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./styles/css/style.css">
+
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&family=Roboto&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="card">
+      <div class="header">
+        <div class="lang">
+          lang
+        </div>
+        <div class="title">
+          Password Generator
+        </div>
+        <div class="close">
+          x
+        </div>
+      </div>
+      <div class="main">
+        <div class="top">
+          <input type="range" id="range" class="range" value="8" min="8" max="15">
+          <output class="bubble"></output>
+        </div>
+        <div class="mid">
+          <div class="lower"><input type="checkbox" id="lower"><label for="lower">abc</label></div>
+          <div class="upper"><input type="checkbox" id="upper"><label for="upper">ABC</label></div>
+          <div class="number"><input type="checkbox" id="number"><label for="number">123</label></div>
+          <div class="special"><input type="checkbox" id="special"><label for="special">#$%</label></div>
+        </div>
+        <div class="bottom">
+          <input id="password" type="text" class="password" readonly disabled>
+        </div>
+      </div>
+      <div class="footer">
+        <button class="button_generate" onClick="genPassword()">Generate</button>
+        <button class="button_copy" onclick="copyPassword()">Copy</button>
+      </div>
+    </div>
+
+    <!-- JS -->
+    <script src="./scripts/javascript/passgen.js" charset="utf-8"></script>
+  </body>
+
+</html>
