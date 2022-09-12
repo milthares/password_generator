@@ -25,7 +25,7 @@ function copyPassword() {
 }
 
 function genPassword() {
-  var p_lower = false, p_upper false, p_number = false, p_special = false;
+  var p_lower = false, p_upper = false, p_number = false, p_special = false;  
   var p_value = 0, p_length = document.getElementById('range').value, temp = "", p_array = [];
   //checking which characters are allowed
   if(document.getElementById('lower').checked) p_value += 1;
